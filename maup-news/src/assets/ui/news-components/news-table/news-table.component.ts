@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
+import { ArticlesFetcherService } from "../../../bl/articles-fetcher.service";
+import { Article } from "../../../bl/model/model";
 
 
 export interface PeriodicElement {
@@ -28,13 +30,22 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./news-table.component.css']
 })
 export class NewsTableComponent implements OnInit {
-
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = ELEMENT_DATA;
+  articles: Article[] = [];
 
-  constructor() { }
+  constructor(private articlesFetcher: ArticlesFetcherService) { }
 
   ngOnInit(): void {
+    this.fetchArticles();
   }
 
+  private fetchArticles(): void {
+    this.articlesFetcher.fetchArticles()
+      .then(articles => {
+        this.articles = articles.articles;
+      }).catch(error => {
+        console.error(error);
+    });
+  }
 }
