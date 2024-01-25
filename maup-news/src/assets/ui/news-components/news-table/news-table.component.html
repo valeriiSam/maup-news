@@ -1,7 +1,3 @@
-<ul>
-  <li *ngFor="let article of articles">
-    <img [src]="article.imageUrl" alt="{{ article.title }}">
-    {{ article.title }}
-    <p>{{ article.description }}</p>
-  </li>
-</ul>
+<div *ngFor="let article of articles">
+  <app-news-table-cell [article]="article" (click)="onArticleClick(article)"></app-news-table-cell>
+</div>

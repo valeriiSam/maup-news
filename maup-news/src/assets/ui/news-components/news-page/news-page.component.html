@@ -1,0 +1,10 @@
+<button mat-icon-button class="close-button" [mat-dialog-close]="true">
+  <mat-icon class="close-icon">X</mat-icon>
+</button>
+<div mat-dialog-content class="news-page-container">
+  <h1 mat-dialog-title class="news-page-title">{{data.title}}</h1>
+  <img class="news-page-image" [src]="data.imageUrl"/>
+  <div class="news-page-description">{{data.description}}</div>
+  <div class="news-page-text">{{data.text}}</div>
+</div>
+

@@ -30,8 +30,6 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./news-table.component.css']
 })
 export class NewsTableComponent implements OnInit {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = ELEMENT_DATA;
   articles: Article[] = [];
 
   constructor(private articlesFetcher: ArticlesFetcherService) { }
@@ -47,5 +45,9 @@ export class NewsTableComponent implements OnInit {
       }).catch(error => {
         console.error(error);
     });
+  }
+
+  onArticleClick(article: Article): void {
+    this.articlesFetcher.openArticleView(article);
   }
 }
