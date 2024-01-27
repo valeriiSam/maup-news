@@ -1,3 +1,4 @@
 <div *ngFor="let article of articles">
   <app-news-table-cell [article]="article" (click)="onArticleClick(article)"></app-news-table-cell>
+  <div class="news-table-cell-divider"></div>
 </div>

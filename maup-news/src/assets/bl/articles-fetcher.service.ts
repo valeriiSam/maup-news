@@ -67,8 +67,8 @@ export class ArticlesFetcherService {
     if (!this.articlePageRef) {
       this.articlePageRef = this.dialog.open(NewsPageComponent, {
         data: article,
-        height: "calc(100% - 30px)",
-        width: "calc(100% - 30px)",
+        height: "calc(100% - 20px)",
+        width: "calc(100% - 20px)",
         maxWidth: "100%",
         maxHeight: "100%",
         panelClass: 'news-page-dialog'
