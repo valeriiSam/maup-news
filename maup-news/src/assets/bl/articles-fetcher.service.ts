@@ -4,6 +4,7 @@ import { Article } from "./model/model";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { MatDialog, MatDialogRef } from "@angular/material/dialog";
 import { NewsPageComponent } from "../ui/news-components/news-page/news-page.component";
+import { firstValueFrom, retry } from "rxjs";
 
 const articlesUrl = 'https://drive.google.com/file/d/1AM7cToPAYpvDORDXdWp_0lj7NfxAeBrt/view?usp=sharing';
 export const headers: HttpHeaders = new HttpHeaders({
@@ -59,8 +60,21 @@ export class ArticlesFetcherService {
   constructor(private http: HttpClient,
               private dialog: MatDialog) { }
 
+  // fetchArticles(): Promise<{ articles: Article[] }> {
+  //   this.http.get('https://bafybeibgcupqb7qebalqhs2msszuzf2p6v4hlid4muzl2jcabeodshrg7i.ipfs.w3s.link/articles.json').subscribe((data) => {
+  //     return Promise.resolve({ articles: articlesMock });
+  //   });
+  //   return Promise.resolve({ articles: articlesMock });
+  // }
+
   fetchArticles(): Promise<{ articles: Article[] }> {
-    return Promise.resolve({ articles: articlesMock });
+    const url = `https://bafybeid3ksxv55bef36rjjedzqefhgx3xw5ram4xsb3mmx3emyf454wal4.ipfs.w3s.link/news.json`;
+    return firstValueFrom(
+      this.http.get<{ articles: Article[] }>(url)
+        .pipe(
+          retry(3)
+        )
+    );
   }
 
   openArticleView(article: Article): void {

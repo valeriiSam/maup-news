@@ -42,7 +42,7 @@
   padding: 10px;
   vertical-align: top;
 }
-@media screen and (max-width: 741px) {
+@media screen and (max-width: 740px) {
   .news-table-cell {
     height: 100px;
     padding: 5px;

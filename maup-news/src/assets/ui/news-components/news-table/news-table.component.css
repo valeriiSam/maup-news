@@ -5,3 +5,20 @@
   background-color: #c0c0c0;
   margin: 5px 0;
 }
+
+.news-table {
+  background-color: aliceblue;
+}
+
+.news-table-container {
+  width: 100%;
+  background-color: #0064b4;
+}
+
+@media screen and (min-width: 741px) {
+  .news-table {
+    width: 60%;
+    margin: 0 auto;
+    min-width: 740px;
+  }
+}
