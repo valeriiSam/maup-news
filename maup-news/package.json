@@ -21,8 +21,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "startandroid": "clear && ng build --prod && cordova run android",
-    "startios": "clear && ng build --prod && cordova run ios",
+    "startandroid": "clear && ng build && cordova run android",
+    "startios": "clear && ng build && cordova run ios",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
