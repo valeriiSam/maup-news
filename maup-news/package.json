@@ -1,9 +1,28 @@
 {
-  "name": "maup-news",
-  "version": "0.0.0",
+  "name": "com.maup.news",
+  "displayName": "MAUPNEWS",
+  "version": "1.0.0",
+  "description": "A sample Apache Cordova application that responds to the deviceready event.",
+  "main": "index.js",
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "author": "Apache Cordova Team",
+  "license": "Apache-2.0",
+  "cordova": {
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "plugins": {
+      "cordova-plugin-splashscreen": {}
+    }
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "startandroid": "clear && ng build --prod && cordova run android",
+    "startios": "clear && ng build --prod && cordova run ios",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -31,6 +50,9 @@
     "@angular/compiler-cli": "~16.2.11",
     "@types/jasmine": "~3.10.0",
     "@types/node": "^12.11.1",
+    "cordova-android": "^10.1.2",
+    "cordova-ios": "^6.3.0",
+    "cordova-plugin-splashscreen": "^6.0.0",
     "jasmine-core": "~4.0.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
