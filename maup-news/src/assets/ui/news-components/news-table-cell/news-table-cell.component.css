@@ -25,6 +25,8 @@
   width: calc(100% - 220px);
   height: 200px;
   vertical-align: top;
+  font-size: 15px;
+  font-family: serif;
 }
 
 .news-cell-title {
@@ -67,6 +69,7 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
-    max-height: 24px;
+    padding: 5px 10px;
+    max-height: 32px;
   }
 }
