@@ -9,9 +9,4 @@ import { MAT_DIALOG_DATA,  } from "@angular/material/dialog";
 })
 export class NewsPageComponent {
   constructor(@Inject(MAT_DIALOG_DATA) public data: Article) {}
-
-  // onNoClick(): void {
-  //   this.dialogRef.close();
-  // }
-
 }

@@ -52,3 +52,11 @@
     height: auto;
   }
 }
+
+@media screen and (min-width: 741px) {
+  .news-page-container {
+    width: 60%;
+    margin: 0 auto;
+    min-width: 740px;
+  }
+}

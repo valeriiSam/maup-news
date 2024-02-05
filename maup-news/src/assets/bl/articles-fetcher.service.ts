@@ -21,13 +21,6 @@ export class ArticlesFetcherService {
   constructor(private http: HttpClient,
               private dialog: MatDialog) { }
 
-  // fetchArticles(): Promise<{ articles: Article[] }> {
-  //   this.http.get('https://bafybeibgcupqb7qebalqhs2msszuzf2p6v4hlid4muzl2jcabeodshrg7i.ipfs.w3s.link/articles.json').subscribe((data) => {
-  //     return Promise.resolve({ articles: articlesMock });
-  //   });
-  //   return Promise.resolve({ articles: articlesMock });
-  // }
-
   fetchArticles(): Promise<{ articles: Article[] }> {
     const url = `https://bafybeid3ksxv55bef36rjjedzqefhgx3xw5ram4xsb3mmx3emyf454wal4.ipfs.w3s.link/news.json`;
     return firstValueFrom(
@@ -59,7 +52,8 @@ export class ArticlesFetcherService {
         width: "calc(100% - 20px)",
         maxWidth: "100%",
         maxHeight: "100%",
-        panelClass: 'news-page-dialog'
+        panelClass: 'news-page-dialog',
+        enterAnimationDuration: 500
       });
 
       this.articlePageRef.afterClosed().subscribe(result => {

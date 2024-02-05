@@ -10,5 +10,4 @@ export class NewsTableCellComponent {
   @Input() article: Article;
 
   constructor() { }
-
 }
