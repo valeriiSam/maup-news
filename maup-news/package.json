@@ -13,10 +13,7 @@
     "platforms": [
       "ios",
       "android"
-    ],
-    "plugins": {
-      "cordova-plugin-splashscreen": {}
-    }
+    ]
   },
   "scripts": {
     "ng": "ng",
